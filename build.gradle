@@ -31,5 +31,6 @@ dependencies {
 		exclude module: 'spring-boot-starter-tomcat'
 	}
 	compile('javax.servlet:jstl')
+	compile('javax.servlet':'javax.servlet-api':'3.0.1')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
