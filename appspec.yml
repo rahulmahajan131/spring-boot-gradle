@@ -2,19 +2,4 @@ version: 0.0
 os: linux
 files:
   - source: /build/libs/spring-boot-gradle.war
-    destination: /tmp/codedeploy-deployment-staging-area/
-  - source: /scripts/configure_http_port.xsl
-    destination: /tmp/codedeploy-deployment-staging-area/
-hooks:
-  ApplicationStop:
-    - location: scripts/stop_application.sh
-      timeout: 300
-  BeforeInstall:
-    - location: scripts/install_dependencies.sh
-      timeout: 300
-  ApplicationStart:
-    - location: scripts/write_codedeploy_config.sh
-    - location: scripts/start_application.sh
-      timeout: 300
-  ValidateService:
-    - location: scripts/basic_health_check.sh
+    destination: /var/lib/tomcat8/webapps/
